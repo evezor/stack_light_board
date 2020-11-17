@@ -14,7 +14,9 @@ can.setfilter(0, CAN.LIST16, 0, (123, 124, 125, 126))
 
 #Setup Pins
 hbt_led = Pin("D5", Pin.OUT)
-func_butt = Pin("E7", Pin.IN, Pin.PULL_UP) 
+func_butt = Pin("E7", Pin.IN, Pin.PULL_UP)
+can_wakeup = Pin("D6", Pin.OUT)
+can_wakeup.value(0) 
 
 BUZZER = Pin("D12", Pin.OUT)
 WHITE = Pin("D11", Pin.OUT)
@@ -85,7 +87,9 @@ while True:
     if not (func_butt.value()):
         print("function button")
         cycle_stack()
+        send()
         utime.sleep_ms(200)
+
     if(can.any(0)):
         get()
         
