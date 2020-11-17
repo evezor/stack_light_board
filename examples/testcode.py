@@ -55,7 +55,7 @@ def chk_hbt():
       
 
 def send():
-    can.send('message!', 123)   # send a message with id 123
+    can.send('EVZRTST', 123)   # send a message with id 123
     
 def get():
     mess = can.recv(0)
