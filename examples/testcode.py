@@ -86,8 +86,8 @@ while True:
     chk_hbt()
     if not (func_butt.value()):
         print("function button")
-        cycle_stack()
         send()
+        cycle_stack()
         utime.sleep_ms(200)
 
     if(can.any(0)):
