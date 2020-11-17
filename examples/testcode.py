@@ -85,6 +85,7 @@ while True:
     if not (func_butt.value()):
         print("function button")
         cycle_stack()
+        send()
         utime.sleep_ms(200)
     if(can.any(0)):
         get()
